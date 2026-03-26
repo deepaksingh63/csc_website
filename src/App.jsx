@@ -2,58 +2,58 @@ import { useState } from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 const primaryServices = [
-  "सभी प्रकार के ऑनलाइन फॉर्म",
-  "आय, जाति, निवास प्रमाण पत्र",
-  "वृद्धा, विधवा, विकलांग पेंशन",
-  "जन्म एवं मृत्यु प्रमाण पत्र",
-  "राशन कार्ड और पासपोर्ट सहायता",
-  "पैन कार्ड और आधार सुधार",
-  "आयुष्मान कार्ड और बीमा सेवाएं",
-  "छात्रवृत्ति एवं ऑनलाइन आवेदन",
+  "All types of online forms",
+  "Income, Caste, Residence Certificate",
+  "Old age, widow, disability pension",
+  "Birth and Death Certificates",
+  "Ration Card and Passport Assistance",
+  "PAN Card and Aadhaar Correction",
+  "Ayushman Card and Insurance Services",
+  "Scholarships and Online Applications",
 ];
 
 const serviceGroups = [
   {
-    title: "दस्तावेज़ एवं प्रमाण पत्र",
-    description: "जरूरी सरकारी प्रमाण पत्र और आधिकारिक दस्तावेज़ के ऑनलाइन आवेदन व प्रिंट सहायता।",
-    items: ["आय प्रमाण पत्र", "जाति प्रमाण पत्र", "निवास प्रमाण पत्र", "जन्म प्रमाण पत्र", "मृत्यु प्रमाण पत्र"],
+    title: "Documents and Certificates",
+    description: "Online applications and print assistance for essential government certificates and official documents.",
+    items: ["Income Certificate", "Caste Certificate", "Residence Certificate", "Birth Certificate", "Death Certificate"],
   },
   {
-    title: "सरकारी योजनाएं",
-    description: "जनसेवा और सामाजिक सुरक्षा योजनाओं के आवेदन, फॉर्म जांच और स्टेटस मदद।",
-    items: ["वृद्धा पेंशन", "विधवा पेंशन", "विकलांग पेंशन", "प्रधानमंत्री मान धन योजना", "छात्रवृत्ति फॉर्म"],
+    title: "Government Schemes",
+    description: "Application support, form review, and status help for welfare and social security schemes.",
+    items: ["Old Age Pension", "Widow Pension", "Disability Pension", "PM Maandhan Yojana", "Scholarship Forms"],
   },
   {
-    title: "कार्ड एवं पहचान सेवाएं",
-    description: "पहचान पत्र, स्वास्थ्य कार्ड और पारिवारिक सुविधा कार्ड के लिए मदद।",
-    items: ["पैन कार्ड", "आधार सुधार", "आयुष्मान कार्ड", "राशन कार्ड", "पासपोर्ट सहायता"],
+    title: "Card and Identity Services",
+    description: "Help with ID cards, health cards, and family benefit cards.",
+    items: ["PAN Card", "Aadhaar Correction", "Ayushman Card", "Ration Card", "Passport Assistance"],
   },
   {
-    title: "बिल, बीमा और डिजिटल सहायता",
-    description: "दैनिक उपयोग की ऑनलाइन सेवाएं एक ही काउंटर पर उपलब्ध।",
-    items: ["LIC प्रीमियम", "बिजली बिल", "फसल बीमा", "ऑनलाइन आवेदन", "फॉर्म प्रिंट व स्कैन"],
+    title: "Bills, Insurance and Digital Help",
+    description: "Daily-use online services available at one convenient counter.",
+    items: ["LIC Premium", "Electricity Bill", "Crop Insurance", "Online Applications", "Form Print and Scan"],
   },
 ];
 
 const highlights = [
-  { value: "100+", label: "लोकप्रिय सेवाएं" },
-  { value: "तेज", label: "ऑनलाइन सहायता" },
-  { value: "CSC", label: "जन सेवा अनुभव" },
-  { value: "हिंदी", label: "सरल मार्गदर्शन" },
+  { value: "100+", label: "Popular Services" },
+  { value: "Fast", label: "Online Assistance" },
+  { value: "CSC", label: "Service Experience" },
+  { value: "Easy", label: "Simple Guidance" },
 ];
 
 const steps = [
   {
-    title: "दस्तावेज़ जमा करें",
-    text: "जरूरी कागज़ात हमारे सेंटर पर लाएं या WhatsApp पर भेजें।",
+    title: "Submit Documents",
+    text: "Bring the required documents to our center or send them on WhatsApp.",
   },
   {
-    title: "फॉर्म और सत्यापन",
-    text: "हम आवेदन भरकर सही जानकारी के साथ सबमिट करते हैं।",
+    title: "Form and Verification",
+    text: "We fill out your application and submit it with correct information.",
   },
   {
-    title: "रसीद और अपडेट",
-    text: "काम पूरा होने तक आपको स्टेटस और अगला स्टेप बताया जाता है।",
+    title: "Receipt and Updates",
+    text: "You receive status updates and the next steps until the work is completed.",
   },
 ];
 
@@ -61,8 +61,8 @@ const contactDetails = {
   owner: "Amit Vishwakarma",
   phone: "9794972789",
   whatsapp: "919794972789",
-  location: "कप्तानगंज रोड, पकड़ियाड़ बाजार, जिला कुशीनगर",
-  hours: "सुबह 9 बजे से शाम 7 बजे तक",
+  location: "Kaptanganj Road, Pakdiyad Bazar, District Kushinagar",
+  hours: "9 a.m. to 7 p.m.",
 };
 
 function WhatsAppBadge({ label = "WhatsApp" }) {
@@ -99,10 +99,10 @@ function Layout({ children }) {
                     Smart CSC Hub
                   </div>
                   <Link to="/" className="mt-3 block font-display text-2xl text-brand-coral md:text-4xl">
-                    विश्वकर्मा कम्प्यूटर्स एंड ट्रेवल्स
+                    Vishwakarma Computers & Travels
                   </Link>
                   <p className="mt-2 max-w-xl text-sm font-medium text-slate-600 md:text-base">
-                    Public Service Centers | Digital Help Center
+                    Public Service Center | Digital Help Center
                   </p>
                 </div>
 
@@ -154,9 +154,9 @@ function Layout({ children }) {
       <footer className="mt-16 bg-brand-ink px-6 py-12 text-white md:px-10">
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3">
           <div>
-            <p className="font-display text-2xl text-brand-gold">विश्वकर्मा कम्प्यूटर्स एंड ट्रेवल्स</p>
+            <p className="font-display text-2xl text-brand-gold">Vishwakarma Computers & Travels</p>
             <p className="mt-3 text-sm leading-7 text-slate-300">
-              CSC सेवाएं, ऑनलाइन फॉर्म, प्रमाण पत्र, पेंशन, कार्ड सेवाएं और बिल सहायता के लिए भरोसेमंद केंद्र।
+              A reliable center for CSC services, online forms, certificates, pensions, card services, and bill support.
             </p>
           </div>
 
@@ -173,9 +173,10 @@ function Layout({ children }) {
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-gold">Contact</p>
             <div className="mt-4 space-y-2 text-sm text-slate-300">
-              <p>मोबाइल: {contactDetails.phone}</p>
-              <p>स्थान: {contactDetails.location}</p>
-              <p>समय: {contactDetails.hours}</p>
+              <p>Owner: {contactDetails.owner}</p>
+              <p>Mobile: {contactDetails.phone}</p>
+              <p>Location: {contactDetails.location}</p>
+              <p>Timings: {contactDetails.hours}</p>
             </div>
           </div>
         </div>
@@ -209,91 +210,89 @@ function MobileNavLink({ to, children, onNavigate }) {
 
 function HomePage() {
   return (
-    <>
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-hero-grid" />
-        <div className="absolute -left-16 top-20 h-40 w-40 rounded-full bg-brand-gold/20 blur-3xl" />
-        <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-sky-200/40 blur-3xl" />
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-0 bg-hero-grid" />
+      <div className="absolute -left-16 top-20 h-40 w-40 rounded-full bg-brand-gold/20 blur-3xl" />
+      <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-sky-200/40 blur-3xl" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 pb-16 pt-12 md:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:pb-24">
-          <div>
-            <span className="inline-flex rounded-full border border-brand-blue/20 bg-white px-4 py-2 text-sm font-semibold text-brand-blue shadow-sm">
-              आपके नजदीकी CSC सेवा केंद्र के लिए भरोसेमंद डिजिटल सहायता
-            </span>
-            <h1 className="mt-6 max-w-3xl font-display text-4xl leading-tight md:text-6xl">
-              हर जरूरी <span className="text-brand-coral">ऑनलाइन सेवा</span> अब एक ही काउंटर पर
-            </h1>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-700 md:text-lg">
-              विश्वकर्मा कम्प्यूटर्स एंड ट्रेवल्स पर फॉर्म भरना, प्रमाण पत्र, पेंशन, राशन कार्ड, पैन कार्ड,
-              आयुष्मान कार्ड और कई जरूरी सेवाएं आसान तरीके से उपलब्ध हैं।
-            </p>
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 pb-16 pt-12 md:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:pb-24">
+        <div>
+          <span className="inline-flex rounded-full border border-brand-blue/20 bg-white px-4 py-2 text-sm font-semibold text-brand-blue shadow-sm">
+            Trusted digital assistance for your nearby CSC service center
+          </span>
+          <h1 className="mt-6 max-w-3xl font-display text-4xl leading-tight md:text-6xl">
+            Every essential <span className="text-brand-coral">online service</span> at one counter
+          </h1>
+          <p className="mt-5 max-w-2xl text-base leading-8 text-slate-700 md:text-lg">
+            At Vishwakarma Computers & Travels, form filling, certificates, pensions, ration card, PAN card,
+            Ayushman card, and many essential services are available in a simple and reliable way.
+          </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                to="/services"
-                className="rounded-full bg-brand-coral px-7 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
-              >
-                सेवाएं देखें
-              </Link>
-              <Link
-                to="/contact"
-                className="rounded-full border border-slate-300 bg-white px-7 py-3 text-sm font-semibold text-slate-800 transition hover:border-brand-blue hover:text-brand-blue"
-              >
-                संपर्क करें
-              </Link>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              to="/services"
+              className="rounded-full bg-brand-coral px-7 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
+            >
+              View Services
+            </Link>
+            <Link
+              to="/contact"
+              className="rounded-full border border-slate-300 bg-white px-7 py-3 text-sm font-semibold text-slate-800 transition hover:border-brand-blue hover:text-brand-blue"
+            >
+              Contact Us
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {highlights.map((item) => (
+              <div key={item.label} className="rounded-3xl border border-white/80 bg-white/80 p-4 shadow-sm backdrop-blur">
+                <p className="text-2xl font-extrabold text-brand-blue">{item.value}</p>
+                <p className="mt-1 text-sm font-medium text-slate-600">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="relative">
+          <div className="absolute inset-x-8 top-6 h-full rounded-[32px] bg-brand-blue/10 blur-2xl" />
+          <div className="relative rounded-[36px] border border-white/70 bg-white/90 p-6 shadow-glow backdrop-blur">
+            <div className="rounded-[28px] bg-brand-ink p-6 text-white">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-gold">CSC Center Services</p>
+              <h2 className="mt-3 font-display text-3xl leading-snug">Fast, accurate and reliable online assistance</h2>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                The services available at your center are now presented clearly and professionally on the website.
+              </p>
             </div>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-              {highlights.map((item) => (
-                <div key={item.label} className="rounded-3xl border border-white/80 bg-white/80 p-4 shadow-sm backdrop-blur">
-                  <p className="text-2xl font-extrabold text-brand-blue">{item.value}</p>
-                  <p className="mt-1 text-sm font-medium text-slate-600">{item.label}</p>
+            <div className="mt-5 grid gap-3">
+              {primaryServices.map((service, index) => (
+                <div
+                  key={service}
+                  className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3"
+                >
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-sky font-bold text-brand-blue">
+                    {index + 1}
+                  </span>
+                  <p className="min-w-0 flex-1 text-sm font-semibold text-slate-700">{service}</p>
+                  <a
+                    href={`https://wa.me/${contactDetails.whatsapp}?text=${encodeURIComponent(
+                      `Hello, I want information about the "${service}" service.`,
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="shrink-0"
+                    aria-label={`WhatsApp contact for ${service}`}
+                    title="Ask on WhatsApp"
+                  >
+                    <WhatsAppBadge label={`WhatsApp contact for ${service}`} />
+                  </a>
                 </div>
               ))}
             </div>
           </div>
-
-          <div className="relative">
-            <div className="absolute inset-x-8 top-6 h-full rounded-[32px] bg-brand-blue/10 blur-2xl" />
-            <div className="relative rounded-[36px] border border-white/70 bg-white/90 p-6 shadow-glow backdrop-blur">
-              <div className="rounded-[28px] bg-brand-ink p-6 text-white">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-gold">CSC Center Services</p>
-                <h2 className="mt-3 font-display text-3xl leading-snug">तेज, सही और भरोसेमंद ऑनलाइन सहायता</h2>
-                <p className="mt-3 text-sm leading-7 text-slate-300">
-                  आपके बोर्ड पर जो सेवाएं हैं, उनकी डिजिटल जानकारी अब वेबसाइट पर साफ और प्रोफेशनल रूप में।
-                </p>
-              </div>
-
-              <div className="mt-5 grid gap-3">
-                {primaryServices.map((service, index) => (
-                  <div
-                    key={service}
-                    className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3"
-                  >
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-sky font-bold text-brand-blue">
-                      {index + 1}
-                    </span>
-                    <p className="min-w-0 flex-1 text-sm font-semibold text-slate-700">{service}</p>
-                    <a
-                      href={`https://wa.me/${contactDetails.whatsapp}?text=${encodeURIComponent(
-                        `नमस्ते, मुझे "${service}" सेवा के बारे में जानकारी चाहिए।`,
-                      )}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="shrink-0"
-                      aria-label={`${service} के लिए WhatsApp संपर्क`}
-                      title="WhatsApp पर पूछें"
-                    >
-                      <WhatsAppBadge label={`${service} के लिए WhatsApp संपर्क`} />
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 
@@ -303,26 +302,25 @@ function AboutPage() {
       <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr]">
         <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-coral">About Us</p>
-          <h1 className="mt-4 font-display text-4xl md:text-5xl">हमारे CSC सेंटर के बारे में</h1>
+          <h1 className="mt-4 font-display text-4xl md:text-5xl">About Our CSC Center</h1>
           <p className="mt-6 text-base leading-8 text-slate-700">
-            विश्वकर्मा कम्प्यूटर्स एंड ट्रेवल्स एक ऐसा जन सेवा केंद्र है जहां गांव और कस्बे के लोगों को जरूरी
-            डिजिटल सेवाएं सरल भाषा और भरोसेमंद मदद के साथ मिलती हैं। हमारा उद्देश्य है कि हर व्यक्ति बिना
-            परेशानी अपने जरूरी ऑनलाइन काम पूरे कर सके।
+            Vishwakarma Computers & Travels is a public service center where people from villages and small towns
+            get essential digital services with clear guidance and reliable support.
           </p>
           <p className="mt-4 text-base leading-8 text-slate-700">
-            यहां दस्तावेज़, सरकारी योजनाएं, कार्ड सेवाएं, फॉर्म फिलिंग, बिल भुगतान और आवेदन सहायता जैसे कई
-            काम एक ही जगह पर किए जाते हैं।
+            Documents, government schemes, card services, form filling, bill payment, and application support are
+            all available at one place.
           </p>
         </div>
 
         <div className="rounded-[32px] bg-[linear-gradient(135deg,#eff9ff_0%,#ffffff_100%)] p-8 shadow-sm">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">हमारी खासियत</p>
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Our Strengths</p>
           <div className="mt-6 grid gap-4">
             {[
-              "हिंदी में आसान मार्गदर्शन",
-              "ग्राहक के दस्तावेज़ की ध्यान से जांच",
-              "समय पर स्टेटस अपडेट",
-              "एक ही सेंटर पर कई सेवाओं की सुविधा",
+              "Easy and clear guidance",
+              "Careful document checking",
+              "On-time status updates",
+              "Multiple services at one center",
             ].map((point) => (
               <div key={point} className="rounded-2xl bg-white px-5 py-4 shadow-sm">
                 <p className="font-semibold text-slate-700">{point}</p>
@@ -339,7 +337,7 @@ function ServicesPage() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-16 md:px-10">
       <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-coral">All Services</p>
-      <h1 className="mt-4 font-display text-4xl md:text-5xl">हर सेवा के लिए अलग जानकारी</h1>
+      <h1 className="mt-4 font-display text-4xl md:text-5xl">Detailed Information for Every Service</h1>
       <div className="mt-10 grid gap-6 lg:grid-cols-2">
         {serviceGroups.map((group, idx) => (
           <article
@@ -370,7 +368,7 @@ function ProcessPage() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-16 md:px-10">
       <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-coral">Process</p>
-      <h1 className="mt-4 font-display text-4xl md:text-5xl">हम काम कैसे करते हैं</h1>
+      <h1 className="mt-4 font-display text-4xl md:text-5xl">How We Work</h1>
       <div className="mt-10 grid gap-6 md:grid-cols-3">
         {steps.map((step, index) => (
           <div key={step.title} className="rounded-[28px] border border-slate-200 bg-white p-7 shadow-sm">
@@ -392,38 +390,38 @@ function ContactPage() {
       <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="rounded-[32px] bg-[linear-gradient(135deg,#f97316_0%,#fb923c_45%,#fdba74_100%)] p-8 text-white shadow-glow">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-100">Contact</p>
-          <h1 className="mt-4 font-display text-4xl">संपर्क करें</h1>
+          <h1 className="mt-4 font-display text-4xl">Contact Us</h1>
           <div className="mt-6 space-y-4 text-sm leading-8 md:text-base">
             <p>
               <span className="font-bold">Owner:</span> {contactDetails.owner}
             </p>
             <p>
-              <span className="font-bold">मोबाइल:</span> {contactDetails.phone}
+              <span className="font-bold">Mobile:</span> {contactDetails.phone}
             </p>
             <p>
-              <span className="font-bold">स्थान:</span> {contactDetails.location}
+              <span className="font-bold">Venue:</span> {contactDetails.location}
             </p>
             <p>
-              <span className="font-bold">समय:</span> {contactDetails.hours}
+              <span className="font-bold">Timings:</span> {contactDetails.hours}
             </p>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={`tel:${contactDetails.phone}`} className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-coral">
-              कॉल करें
+              Call Now
             </a>
             <a
               href={`https://wa.me/${contactDetails.whatsapp}`}
               className="rounded-full border border-white/40 px-5 py-3 text-sm font-semibold text-white"
             >
-              WhatsApp करें
+              WhatsApp
             </a>
           </div>
         </div>
 
         <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Available Help</p>
-          <h2 className="mt-4 font-display text-3xl">यहां कौन-कौन से काम होते हैं</h2>
+          <h2 className="mt-4 font-display text-3xl">Services Available Here</h2>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {primaryServices.map((service) => (
               <div key={service} className="rounded-2xl bg-slate-50 px-4 py-4">
