@@ -15,23 +15,49 @@ const primaryServices = [
 const serviceGroups = [
   {
     title: "Documents and Certificates",
-    description: "Online applications and print assistance for essential government certificates and official documents.",
-    items: ["Income Certificate", "Caste Certificate", "Residence Certificate", "Birth Certificate", "Death Certificate"],
+    description:
+      "Online applications and print assistance for essential government certificates and official documents.",
+    items: [
+      "Income Certificate",
+      "Caste Certificate",
+      "Residence Certificate",
+      "Birth Certificate",
+      "Death Certificate",
+    ],
   },
   {
     title: "Government Schemes",
-    description: "Application support, form review, and status help for welfare and social security schemes.",
-    items: ["Old Age Pension", "Widow Pension", "Disability Pension", "PM Maandhan Yojana", "Scholarship Forms"],
+    description:
+      "Application support, form review, and status help for welfare and social security schemes.",
+    items: [
+      "Old Age Pension",
+      "Widow Pension",
+      "Disability Pension",
+      "PM Maandhan Yojana",
+      "Scholarship Forms",
+    ],
   },
   {
     title: "Card and Identity Services",
     description: "Help with ID cards, health cards, and family benefit cards.",
-    items: ["PAN Card", "Aadhaar Correction", "Ayushman Card", "Ration Card", "Passport Assistance"],
+    items: [
+      "PAN Card",
+      "Aadhaar Correction",
+      "Ayushman Card",
+      "Ration Card",
+      "Passport Assistance",
+    ],
   },
   {
     title: "Bills, Insurance and Digital Help",
     description: "Daily-use online services available at one convenient counter.",
-    items: ["LIC Premium", "Electricity Bill", "Crop Insurance", "Online Applications", "Form Print and Scan"],
+    items: [
+      "LIC Premium",
+      "Electricity Bill",
+      "Crop Insurance",
+      "Online Applications",
+      "Form Print and Scan",
+    ],
   },
 ];
 
@@ -42,7 +68,7 @@ const highlights = [
   { value: "Easy", label: "Simple Guidance" },
 ];
 
-const steps = [
+const processSteps = [
   {
     title: "Submit Documents",
     text: "Bring the required documents to our center or send them on WhatsApp.",
@@ -57,11 +83,11 @@ const steps = [
   },
 ];
 
-const contactDetails = {
+const contactInfo = {
   owner: "Amit Vishwakarma",
   phone: "9794972789",
   whatsapp: "919794972789",
-  location: "Kaptanganj Road, Pakdiyad Bazar, District Kushinagar",
+  location: "Kaptanganj Road, Pakariyar Bazar, District Kushinagar",
   hours: "9 a.m. to 7 p.m.",
 };
 
@@ -156,7 +182,8 @@ function Layout({ children }) {
           <div>
             <p className="font-display text-2xl text-brand-gold">Vishwakarma Computers & Travels</p>
             <p className="mt-3 text-sm leading-7 text-slate-300">
-              A reliable center for CSC services, online forms, certificates, pensions, card services, and bill support.
+              A reliable center for CSC services, online forms, certificates, pensions, card services,
+              and bill support.
             </p>
           </div>
 
@@ -173,10 +200,10 @@ function Layout({ children }) {
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-gold">Contact</p>
             <div className="mt-4 space-y-2 text-sm text-slate-300">
-              <p>Owner: {contactDetails.owner}</p>
-              <p>Mobile: {contactDetails.phone}</p>
-              <p>Location: {contactDetails.location}</p>
-              <p>Timings: {contactDetails.hours}</p>
+              <p>Owner: {contactInfo.owner}</p>
+              <p>Mobile: {contactInfo.phone}</p>
+              <p>Location: {contactInfo.location}</p>
+              <p>Timings: {contactInfo.hours}</p>
             </div>
           </div>
         </div>
@@ -224,8 +251,8 @@ function HomePage() {
             Every essential <span className="text-brand-coral">online service</span> at one counter
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-8 text-slate-700 md:text-lg">
-            At Vishwakarma Computers & Travels, form filling, certificates, pensions, ration card, PAN card,
-            Ayushman card, and many essential services are available in a simple and reliable way.
+            At Vishwakarma Computers & Travels, form filling, certificates, pensions, ration card,
+            PAN card, Ayushman card, and many essential services are available in a simple and reliable way.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -266,16 +293,13 @@ function HomePage() {
 
             <div className="mt-5 grid gap-3">
               {primaryServices.map((service, index) => (
-                <div
-                  key={service}
-                  className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3"
-                >
+                <div key={service} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-sky font-bold text-brand-blue">
                     {index + 1}
                   </span>
                   <p className="min-w-0 flex-1 text-sm font-semibold text-slate-700">{service}</p>
                   <a
-                    href={`https://wa.me/${contactDetails.whatsapp}?text=${encodeURIComponent(
+                    href={`https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent(
                       `Hello, I want information about the "${service}" service.`,
                     )}`}
                     target="_blank"
@@ -304,12 +328,12 @@ function AboutPage() {
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-coral">About Us</p>
           <h1 className="mt-4 font-display text-4xl md:text-5xl">About Our CSC Center</h1>
           <p className="mt-6 text-base leading-8 text-slate-700">
-            Vishwakarma Computers & Travels is a public service center where people from villages and small towns
-            get essential digital services with clear guidance and reliable support.
+            Vishwakarma Computers & Travels is a public service center where people from villages and
+            small towns get essential digital services with clear guidance and reliable support.
           </p>
           <p className="mt-4 text-base leading-8 text-slate-700">
-            Documents, government schemes, card services, form filling, bill payment, and application support are
-            all available at one place.
+            Documents, government schemes, card services, form filling, bill payment, and application
+            support are all available at one place.
           </p>
         </div>
 
@@ -339,11 +363,11 @@ function ServicesPage() {
       <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-coral">All Services</p>
       <h1 className="mt-4 font-display text-4xl md:text-5xl">Detailed Information for Every Service</h1>
       <div className="mt-10 grid gap-6 lg:grid-cols-2">
-        {serviceGroups.map((group, idx) => (
+        {serviceGroups.map((group, index) => (
           <article
             key={group.title}
             className={`rounded-[30px] p-7 shadow-sm ${
-              idx % 2 === 0
+              index % 2 === 0
                 ? "border border-sky-100 bg-[linear-gradient(135deg,#ffffff_0%,#eff9ff_100%)]"
                 : "border border-amber-100 bg-[linear-gradient(135deg,#fff8ee_0%,#ffffff_100%)]"
             }`}
@@ -370,7 +394,7 @@ function ProcessPage() {
       <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-coral">Process</p>
       <h1 className="mt-4 font-display text-4xl md:text-5xl">How We Work</h1>
       <div className="mt-10 grid gap-6 md:grid-cols-3">
-        {steps.map((step, index) => (
+        {processSteps.map((step, index) => (
           <div key={step.title} className="rounded-[28px] border border-slate-200 bg-white p-7 shadow-sm">
             <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-coral text-lg font-bold text-white">
               {index + 1}
@@ -393,25 +417,25 @@ function ContactPage() {
           <h1 className="mt-4 font-display text-4xl">Contact Us</h1>
           <div className="mt-6 space-y-4 text-sm leading-8 md:text-base">
             <p>
-              <span className="font-bold">Owner:</span> {contactDetails.owner}
+              <span className="font-bold">Owner:</span> {contactInfo.owner}
             </p>
             <p>
-              <span className="font-bold">Mobile:</span> {contactDetails.phone}
+              <span className="font-bold">Mobile:</span> {contactInfo.phone}
             </p>
             <p>
-              <span className="font-bold">Venue:</span> {contactDetails.location}
+              <span className="font-bold">Venue:</span> {contactInfo.location}
             </p>
             <p>
-              <span className="font-bold">Timings:</span> {contactDetails.hours}
+              <span className="font-bold">Timings:</span> {contactInfo.hours}
             </p>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={`tel:${contactDetails.phone}`} className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-coral">
+            <a href={`tel:${contactInfo.phone}`} className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-coral">
               Call Now
             </a>
             <a
-              href={`https://wa.me/${contactDetails.whatsapp}`}
+              href={`https://wa.me/${contactInfo.whatsapp}`}
               className="rounded-full border border-white/40 px-5 py-3 text-sm font-semibold text-white"
             >
               WhatsApp
